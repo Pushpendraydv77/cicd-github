@@ -35,4 +35,4 @@ jobs:
         mkdir -p /var/www/cicd
         put -r ./build/* /var/www/cicd
         bye
-EOF
+
