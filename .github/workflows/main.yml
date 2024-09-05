@@ -31,6 +31,6 @@ jobs:
 
     - name: Deploy files to server using SCP
       run: |
-       scp -o StrictHostKeyChecking=no -r ./build/* 
-       root@206.189.134.211:/var/www/cicd
+       scp -o StrictHostKeyChecking=no -r 
+       ./build/ root@206.189.134.211:/var/www/cicd
 
