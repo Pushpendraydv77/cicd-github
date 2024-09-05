@@ -29,6 +29,10 @@ jobs:
       with:
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-    - name: Deploy files to server using SCP
+    - name: Deploy files to server using SFTP
       run: |
-        scp -o StrictHostKeyChecking=no -r ./build/* root@206.189.134.211:/var/www/cicd
+        sftp -o StrictHostKeyChecking=no root@206.189.134.211 <<EOF
+        mkdir -p /var/www/cicd
+        put -r ./build/* /var/www/cicd
+        bye
+EOF
