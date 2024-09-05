@@ -29,8 +29,8 @@ jobs:
       with:
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-  - name: Deploy files to server using SCP
-   run: |
-    scp -o StrictHostKeyChecking=no -r ./build/* 
-    root@206.189.134.211:/var/www/cicd
+    - name: Deploy files to server using SCP
+      run: |
+       scp -o StrictHostKeyChecking=no -r ./build/* 
+       root@206.189.134.211:/var/www/cicd
 
